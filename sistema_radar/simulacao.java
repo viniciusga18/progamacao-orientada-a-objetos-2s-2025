@@ -2,16 +2,10 @@ package sistema_radar;
 
 public class simulacao {
     public static void main(String[] args) {
-        Carro hellcat = new Carro();
-        hellcat.ano = 24;
-        hellcat.modelo = "Demon";
-        hellcat.placa = "VLDM001";
-        hellcat.velocidade = 0; 
+        Carro hellcat = new Carro("VLDM001", 0, 24, "Demon");
 
-        Radar radar = new Radar();
-        radar.localizacao = "Pistao sul";
-        radar.limiteVelocidade = 60;
-
+        Radar radar = new Radar("Pistao Sul",60);
+      
         radar.avaliarVelocidade(hellcat);
 
         hellcat.acelerar(); //10
@@ -21,7 +15,7 @@ public class simulacao {
          hellcat.acelerar();
          hellcat.acelerar();
          hellcat.acelerar(); //10
-
+         hellcat.setVelocidade(-60);
          radar.avaliarVelocidade(hellcat);
     }
     
